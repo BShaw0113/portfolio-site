@@ -1,22 +1,31 @@
-// script.js
 document.getElementById("year").textContent = new Date().getFullYear();
 
+// Mobile menu
 const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
 menuBtn?.addEventListener("click", () => {
-  const links = document.querySelector(".nav-links");
-  if (!links) return;
-  const isOpen = links.style.display === "flex";
-  links.style.display = isOpen ? "none" : "flex";
-  links.style.flexDirection = "column";
-  links.style.gap = "12px";
+  const isOpen = navLinks.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", String(isOpen));
 });
 
-const form = document.getElementById("contactForm");
-const note = document.getElementById("formNote");
+// Reveal on scroll
+const revealEls = document.querySelectorAll(".reveal");
+const io = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) entry.target.classList.add("is-visible");
+    });
+  },
+  { threshold: 0.12 }
+);
 
-form?.addEventListener("submit", (e) => {
-  e.preventDefault();
-  // Static site note: wire this to Formspree/Netlify Forms later.
-  note.textContent = "Thanks! This form is a demo. Connect it to Formspree or Netlify Forms to receive messages.";
-  form.reset();
+revealEls.forEach((el) => io.observe(el));
+// Expand / collapse project cards
+document.querySelectorAll(".toggle-project").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const card = btn.closest(".project-card");
+    const expanded = card.classList.toggle("expanded");
+    btn.textContent = expanded ? "Less ←" : "More →";
+  });
 });

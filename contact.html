@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | Brendon Shaw</title>
+  <meta name="description" content="Contact Brendon Shaw for Systems Analyst, Security Analyst, and Technical Operations opportunities." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a class="brand" href="index.html">Brendon Shaw</a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">Menu</button>
+
+      <div class="nav-links" id="navLinks" aria-label="Primary">
+        <a class="nav-item" href="index.html">Home</a>
+        <a class="nav-item" href="projects.html">Projects</a>
+        <a class="nav-item" href="experience.html">Experience</a>
+        <a class="nav-item" href="tools.html">Tools</a>
+        <a class="nav-item" href="contact.html">Contact</a>
+        <a class="nav-item nav-cta" href="resume.html">Resume</a>
+      </div>
+    </nav>
+
+    <div class="hero" style="padding-bottom:24px;">
+      <div class="hero-left">
+        <p class="eyebrow reveal">Contact</p>
+        <h1 class="reveal">Let’s connect.</h1>
+        <p class="hero-sub reveal">
+          Fastest way to reach me is LinkedIn. You can also wire this form to Formspree or Netlify later.
+        </p>
+
+        <div class="cta reveal">
+          <a class="btn primary" href="https://www.linkedin.com/in/brendonshaw/" target="_blank" rel="noreferrer">Message on LinkedIn</a>
+          <a class="btn" href="resume.html">View Resume</a>
+        </div>
+      </div>
+
+      <div class="hero-right reveal">
+        <div class="hero-card">
+          <h2>Links</h2>
+          <ul class="focus">
+            <li><span class="bullet"></span> <a href="https://www.linkedin.com/in/brendonshaw/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+            <li><span class="bullet"></span> <a href="https://github.com/BShaw0113" target="_blank" rel="noreferrer">GitHub</a></li>
+            <li><span class="bullet"></span> <a href="resume.html">Resume</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <div class="section-head">
+        <h2 class="reveal">Send a message</h2>
+        <p class="subtext reveal">This form is a demo until you connect it to a service.</p>
+      </div>
+
+      <form class="card reveal" id="contactForm">
+        <div class="grid two" style="margin-top:0;">
+          <label>
+            <div class="eyebrow" style="margin:0 0 6px;">Name</div>
+            <input
+              name="name"
+              required
+              placeholder="Your name"
+              style="width:100%; padding:10px; border:1px solid var(--border); background:#fff;"
+            />
+          </label>
+
+          <label>
+            <div class="eyebrow" style="margin:0 0 6px;">Email</div>
+            <input
+              name="email"
+              type="email"
+              required
+              placeholder="your@email.com"
+              style="width:100%; padding:10px; border:1px solid var(--border); background:#fff;"
+            />
+          </label>
+        </div>
+
+        <label style="display:block; margin-top:12px;">
+          <div class="eyebrow" style="margin:0 0 6px;">Message</div>
+          <textarea
+            name="message"
+            rows="6"
+            required
+            placeholder="What would you like to discuss?"
+            style="width:100%; padding:10px; border:1px solid var(--border); background:#fff;"
+          ></textarea>
+        </label>
+
+        <div class="cta" style="margin-top:14px;">
+          <button class="btn primary" type="submit">Send</button>
+          <a class="btn" href="resume.html">Resume</a>
+          <a class="btn" href="projects.html">Projects</a>
+        </div>
+
+        <p class="subtext" id="formNote" style="margin-top:10px;"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Brendon Shaw</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
