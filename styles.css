@@ -360,3 +360,64 @@ a:hover{ text-decoration:underline; }
 .project-card .toggle-project:hover {
   text-decoration: underline;
 }
+/* ---------- Mobile Nav Fix ---------- */
+@media (max-width: 760px) {
+  .nav {
+    position: relative;
+    z-index: 1000;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 64px;              /* below navbar */
+    left: 0;
+    right: 0;
+    background: #ffffff;   /* solid background */
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 0;
+    flex-direction: column;
+    gap: 0;
+    z-index: 2000;         /* ABOVE everything */
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-item {
+    padding: 14px 20px;
+    width: 100%;
+    border-bottom: 1px solid var(--border);
+    background: #ffffff;
+  }
+
+  .nav-item:last-child {
+    border-bottom: none;
+  }
+
+  .nav-item:hover {
+    background: #f2f2f2;
+  }
+
+  .nav-cta {
+    margin: 10px 20px;
+    text-align: center;
+  }
+}
+@media (max-width: 760px) {
+  /* Ensure Resume CTA is readable in the mobile dropdown */
+  .nav-links .nav-cta {
+    background: var(--text) !important;
+    color: var(--bg) !important;
+    border: 1px solid var(--text) !important;
+  }
+
+  .nav-links .nav-cta:hover {
+    background: #111 !important;
+    border-color: #111 !important;
+    color: #fff !important;
+    text-decoration: none;
+  }
+}
