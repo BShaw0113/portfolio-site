@@ -4,110 +4,175 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact | Brendon Shaw</title>
-  <meta name="description" content="Contact Brendon Shaw for Systems Analyst, Security Analyst, and Technical Operations opportunities." />
+  <meta name="description" content="Get in touch with Brendon Shaw — Systems &amp; Security Analyst open to new opportunities in Memphis, TN and beyond." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="header">
-    <nav class="nav">
-      <a class="brand" href="index.html">Brendon Shaw</a>
 
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">Menu</button>
-
-      <div class="nav-links" id="navLinks" aria-label="Primary">
-        <a class="nav-item" href="index.html">Home</a>
-        <a class="nav-item" href="projects.html">Projects</a>
-        <a class="nav-item" href="experience.html">Experience</a>
-        <a class="nav-item" href="tools.html">Tools</a>
-        <a class="nav-item" href="contact.html">Contact</a>
-        <a class="nav-item nav-cta" href="resume.html">Resume</a>
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">Brendon Shaw</a>
+      <div class="nav-links">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="projects.html">Projects</a>
+        <a class="nav-link" href="experience.html">Experience</a>
+        <a class="nav-link" href="tools.html">Tools</a>
+        <a class="nav-link active" href="contact.html">Contact</a>
+        <a class="nav-cta" href="resume.html">Resume →</a>
       </div>
-    </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav-mobile" id="navMobile">
+    <a class="nav-link" href="index.html">Home</a>
+    <a class="nav-link" href="projects.html">Projects</a>
+    <a class="nav-link" href="experience.html">Experience</a>
+    <a class="nav-link" href="tools.html">Tools</a>
+    <a class="nav-link active" href="contact.html">Contact</a>
+    <a class="nav-cta" href="resume.html">Resume →</a>
+  </div>
 
-    <div class="hero" style="padding-bottom:24px;">
-      <div class="hero-left">
-        <p class="eyebrow reveal">Contact</p>
-        <h1 class="reveal">Let’s connect.</h1>
-        <p class="hero-sub reveal">
-          Fastest way to reach me is LinkedIn. You can also wire this form to Formspree or Netlify later.
-        </p>
-
-        <div class="cta reveal">
-          <a class="btn primary" href="https://www.linkedin.com/in/brendonshaw/" target="_blank" rel="noreferrer">Message on LinkedIn</a>
-          <a class="btn" href="resume.html">View Resume</a>
-        </div>
-      </div>
-
-      <div class="hero-right reveal">
-        <div class="hero-card">
-          <h2>Links</h2>
-          <ul class="focus">
-            <li><span class="bullet"></span> <a href="https://www.linkedin.com/in/brendonshaw/" target="_blank" rel="noreferrer">LinkedIn</a></li>
-            <li><span class="bullet"></span> <a href="https://github.com/BShaw0113" target="_blank" rel="noreferrer">GitHub</a></li>
-            <li><span class="bullet"></span> <a href="resume.html">Resume</a></li>
-          </ul>
-        </div>
-      </div>
+  <!-- PAGE HERO -->
+  <header class="page-hero">
+    <div class="container">
+      <p class="page-eyebrow reveal">Get In Touch</p>
+      <h1 class="reveal reveal-delay-1">Let's connect</h1>
+      <p class="reveal reveal-delay-2">Open to Systems Analyst, Security Analyst, and Technical Operations roles. Reach out through any of the channels below — I'll get back to you promptly.</p>
     </div>
   </header>
 
-  <main class="container">
-    <section class="section">
-      <div class="section-head">
-        <h2 class="reveal">Send a message</h2>
-        <p class="subtext reveal">This form is a demo until you connect it to a service.</p>
+  <!-- CONTACT SECTION -->
+  <section class="section">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;" class="contact-layout">
+
+        <!-- Left: Contact links -->
+        <div>
+          <p class="section-label reveal">Direct Links</p>
+          <h2 class="reveal reveal-delay-1" style="margin-bottom:32px;">How to reach me</h2>
+
+          <div style="display:flex;flex-direction:column;gap:12px;">
+
+            <a class="contact-item reveal" href="mailto:BrendonShaw27@gmail.com">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="contact-label">Email</div>
+                <div class="contact-value">BrendonShaw27@gmail.com</div>
+              </div>
+            </a>
+
+            <a class="contact-item reveal reveal-delay-1" href="https://linkedin.com/in/brendonshaw/" target="_blank" rel="noreferrer">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </div>
+              <div>
+                <div class="contact-label">LinkedIn</div>
+                <div class="contact-value">linkedin.com/in/brendonshaw</div>
+              </div>
+            </a>
+
+            <a class="contact-item reveal reveal-delay-2" href="https://github.com/BShaw0113" target="_blank" rel="noreferrer">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </div>
+              <div>
+                <div class="contact-label">GitHub</div>
+                <div class="contact-value">github.com/BShaw0113</div>
+              </div>
+            </a>
+
+            <div class="contact-item reveal reveal-delay-3" style="cursor:default;">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="contact-label">Location</div>
+                <div class="contact-value">Memphis, Tennessee</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right: Info card -->
+        <div class="reveal reveal-delay-2">
+          <div class="card" style="margin-bottom:20px;">
+            <div class="badge badge-green" style="margin-bottom:20px;">
+              <span class="status-dot"></span>Available for Opportunities
+            </div>
+            <h3 style="margin-bottom:12px;">What I'm looking for</h3>
+            <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;margin-bottom:20px;">
+              Actively pursuing roles in Systems Analysis, Security Analysis, and Technical Operations. I bring hands-on experience with enterprise communication platforms, vendor risk workflows, and SQL-based data analysis.
+            </p>
+            <div style="height:1px;background:var(--border);margin-bottom:20px;"></div>
+            <p style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-subtle);margin-bottom:12px;">Interested Roles</p>
+            <div class="tag-list">
+              <span class="tag">Systems Analyst</span>
+              <span class="tag">Security Analyst</span>
+              <span class="tag">Technical Operations</span>
+              <span class="tag">IT Support Lead</span>
+              <span class="tag">Data Analyst</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <p style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-subtle);margin-bottom:16px;">Quick Links</p>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <a href="SHAW-26.pdf" download style="display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border:1.5px solid var(--border);border-radius:var(--radius-md);color:var(--text);font-size:0.9rem;font-weight:500;transition:all 200ms ease;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)';this.style.background='var(--primary-light)';" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text)';this.style.background='transparent';">
+                <span>Download Resume (PDF)</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              </a>
+              <a href="SHAW-26.docx" download style="display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border:1.5px solid var(--border);border-radius:var(--radius-md);color:var(--text);font-size:0.9rem;font-weight:500;transition:all 200ms ease;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)';this.style.background='var(--primary-light)';" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text)';this.style.background='transparent';">
+                <span>Download Resume (DOCX)</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              </a>
+              <a href="resume.html" style="display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border:1.5px solid var(--border);border-radius:var(--radius-md);color:var(--text);font-size:0.9rem;font-weight:500;transition:all 200ms ease;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)';this.style.background='var(--primary-light)';" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text)';this.style.background='transparent';">
+                <span>View Resume Online</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
-
-      <form class="card reveal" id="contactForm">
-        <div class="grid two" style="margin-top:0;">
-          <label>
-            <div class="eyebrow" style="margin:0 0 6px;">Name</div>
-            <input
-              name="name"
-              required
-              placeholder="Your name"
-              style="width:100%; padding:10px; border:1px solid var(--border); background:#fff;"
-            />
-          </label>
-
-          <label>
-            <div class="eyebrow" style="margin:0 0 6px;">Email</div>
-            <input
-              name="email"
-              type="email"
-              required
-              placeholder="your@email.com"
-              style="width:100%; padding:10px; border:1px solid var(--border); background:#fff;"
-            />
-          </label>
-        </div>
-
-        <label style="display:block; margin-top:12px;">
-          <div class="eyebrow" style="margin:0 0 6px;">Message</div>
-          <textarea
-            name="message"
-            rows="6"
-            required
-            placeholder="What would you like to discuss?"
-            style="width:100%; padding:10px; border:1px solid var(--border); background:#fff;"
-          ></textarea>
-        </label>
-
-        <div class="cta" style="margin-top:14px;">
-          <button class="btn primary" type="submit">Send</button>
-          <a class="btn" href="resume.html">Resume</a>
-          <a class="btn" href="projects.html">Projects</a>
-        </div>
-
-        <p class="subtext" id="formNote" style="margin-top:10px;"></p>
-      </form>
-    </section>
-  </main>
+    </div>
+  </section>
 
   <footer class="footer">
-    <p>© <span id="year"></span> Brendon Shaw</p>
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">Brendon Shaw</div>
+        <div class="footer-tagline">Systems &amp; Security Analyst · Memphis, TN</div>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a class="footer-link" href="projects.html">Projects</a>
+        <a class="footer-link" href="experience.html">Experience</a>
+        <a class="footer-link" href="tools.html">Tools</a>
+        <a class="footer-link" href="contact.html">Contact</a>
+        <a class="footer-link" href="resume.html">Resume</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Brendon Shaw</span>
+      <div class="footer-socials">
+        <a class="footer-link" href="https://linkedin.com/in/brendonshaw/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="footer-link" href="https://github.com/BShaw0113" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
   </footer>
 
   <script src="script.js"></script>
+  <style>
+    @media (max-width: 768px) {
+      .contact-layout { grid-template-columns: 1fr !important; gap: 40px !important; }
+    }
+  </style>
 </body>
 </html>

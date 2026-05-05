@@ -3,210 +3,623 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>Brendon Shaw | Systems Analyst & Security Portfolio</title>
-  <meta name="description" content="Brendon Shaw portfolio featuring enterprise systems support, vendor risk/security, SQL reporting, and operational excellence." />
+  <title>Brendon Shaw | Systems &amp; Security Analyst</title>
+  <meta name="description" content="Brendon Shaw — Systems &amp; Security Analyst specializing in enterprise infrastructure, vendor risk, and data-driven operations. Memphis, TN." />
   <meta name="robots" content="index, follow" />
-
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Homepage-specific styles ── */
+
+    /* Dot-grid hero background */
+    .hero {
+      padding: calc(var(--nav-h) + 80px) 0 100px;
+      background-color: #fff;
+      background-image: radial-gradient(circle, #c7d2fe 1px, transparent 1px);
+      background-size: 28px 28px;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 0% 50%,  rgba(238,242,255,0.97) 0%, rgba(238,242,255,0.6) 45%, transparent 75%),
+        radial-gradient(ellipse at 100% 0%,  rgba(224,231,255,0.95) 0%, rgba(224,231,255,0.5) 40%, transparent 70%),
+        radial-gradient(ellipse at 50% 110%, rgba(255,255,255,0.9)  0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    /* Split hero layout */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 64px;
+      align-items: center;
+    }
+    .hero-name {
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+    .hero-title {
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      font-weight: 900;
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      margin-bottom: 24px;
+      color: var(--text);
+    }
+
+    /* Right-side card */
+    .hero-card {
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+    .hero-card-header {
+      background: linear-gradient(135deg, var(--primary) 0%, #7C3AED 100%);
+      padding: 24px 24px 20px;
+    }
+    .hero-card-header-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 6px;
+    }
+    .hero-card-role {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+    .hero-card-company {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.75);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .hero-card-body { padding: 20px 24px 24px; }
+    .hero-card-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-card-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .hero-card-row-icon {
+      width: 32px; height: 32px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-accent);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .hero-card-row-icon svg { width: 16px; height: 16px; fill: none; stroke: var(--primary); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .hero-card-row-text { font-size: 0.875rem; font-weight: 500; color: var(--text); }
+    .hero-card-row-sub  { font-size: 0.775rem; color: var(--text-muted); margin-top: 1px; }
+    .hero-card-certs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .hero-cert-chip {
+      background: var(--bg-accent);
+      border: 1px solid var(--border-focus);
+      border-radius: var(--radius-md);
+      padding: 10px 12px;
+      text-align: center;
+    }
+    .hero-cert-chip-name { font-size: 0.72rem; font-weight: 700; color: var(--primary); }
+    .hero-cert-chip-issuer { font-size: 0.68rem; color: var(--text-muted); margin-top: 2px; }
+
+    /* ── Dark stats strip ── */
+    .stats-strip {
+      background: var(--text);
+      padding: 56px 0;
+    }
+    .stats-strip-inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+    .stats-strip-item {
+      text-align: center;
+      padding: 0 24px;
+      position: relative;
+    }
+    .stats-strip-item + .stats-strip-item::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 10%; bottom: 10%;
+      width: 1px;
+      background: rgba(255,255,255,0.1);
+    }
+    .stats-strip-num {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      background: linear-gradient(135deg, #818CF8, #C4B5FD);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+    }
+    .stats-strip-label {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.5);
+      font-weight: 500;
+    }
+
+    /* ── Marquee ── */
+    .marquee-section {
+      background: var(--primary);
+      padding: 16px 0;
+      overflow: hidden;
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee-scroll 28s linear infinite;
+    }
+    .marquee-track:hover { animation-play-state: paused; }
+    @keyframes marquee-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-inner {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      white-space: nowrap;
+    }
+    .marquee-item {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      padding: 0 20px;
+      letter-spacing: 0.01em;
+    }
+    .marquee-sep {
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.35);
+      flex-shrink: 0;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .marquee-track { animation: none; }
+    }
+
+    /* ── Numbered experience cards ── */
+    .exp-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .exp-card-num {
+      position: absolute;
+      top: -10px; right: 16px;
+      font-size: 6rem;
+      font-weight: 900;
+      color: var(--border);
+      line-height: 1;
+      letter-spacing: -0.05em;
+      pointer-events: none;
+      user-select: none;
+      transition: color var(--t-base) var(--ease);
+    }
+    .exp-card:hover .exp-card-num { color: var(--primary-light); }
+    .exp-card-accent {
+      height: 3px;
+      margin: -28px -28px 24px;
+      border-radius: 0;
+    }
+    .exp-card-accent.green  { background: var(--green); }
+    .exp-card-accent.indigo { background: var(--primary); }
+    .exp-card-accent.gray   { background: var(--border); }
+    .exp-card-content { position: relative; z-index: 1; }
+
+    /* ── Bold project cards ── */
+    .proj-card-v2 {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: box-shadow var(--t-base) var(--ease), transform var(--t-base) var(--ease), border-color var(--t-base) var(--ease);
+      background: #fff;
+    }
+    .proj-card-v2:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+      border-color: var(--border-focus);
+    }
+    .proj-card-band {
+      padding: 28px 28px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .proj-card-band-1 { background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%); }
+    .proj-card-band-2 { background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%); }
+    .proj-card-band-bg {
+      position: absolute;
+      right: -20px; top: -20px;
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      opacity: 0.4;
+    }
+    .proj-card-band-1 .proj-card-band-bg { background: var(--primary-light); }
+    .proj-card-band-2 .proj-card-band-bg { background: var(--green-light); }
+    .proj-card-type-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .proj-card-band-1 .proj-card-type-label { color: var(--primary); }
+    .proj-card-band-2 .proj-card-type-label { color: #047857; }
+    .proj-card-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      line-height: 1.2;
+    }
+    .proj-card-body { padding: 24px 28px 28px; }
+
+    /* ── Section with left accent ── */
+    .section-header-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 48px;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .section-header-row .section-sub { margin-bottom: 0; }
+
+    /* ── Responsive overrides ── */
+    @media (max-width: 1024px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+      .hero-card { max-width: 480px; }
+      .hero-title { font-size: clamp(2.5rem, 6vw, 3.5rem); }
+    }
+    @media (max-width: 768px) {
+      .stats-strip-inner { grid-template-columns: 1fr; gap: 32px; }
+      .stats-strip-item + .stats-strip-item::before { display: none; }
+      .hero-card { display: none; }
+      .hero-title { font-size: 2.5rem; }
+    }
+  </style>
 </head>
-
 <body>
-  <header class="header">
-    <nav class="nav">
-      <a class="brand" href="index.html">Brendon Shaw</a>
 
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">Menu</button>
-
-      <div class="nav-links" id="navLinks" aria-label="Primary">
-        <a class="nav-item" href="index.html">Home</a>
-        <a class="nav-item" href="projects.html">Projects</a>
-        <a class="nav-item" href="experience.html">Experience</a>
-        <a class="nav-item" href="tools.html">Tools</a>
-        <a class="nav-item" href="contact.html">Contact</a>
-        <a class="nav-item nav-cta" href="resume.html">Resume</a>
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">Brendon Shaw</a>
+      <div class="nav-links">
+        <a class="nav-link active" href="index.html">Home</a>
+        <a class="nav-link" href="projects.html">Projects</a>
+        <a class="nav-link" href="experience.html">Experience</a>
+        <a class="nav-link" href="tools.html">Tools</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+        <a class="nav-cta" href="resume.html">Resume →</a>
       </div>
-    </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav-mobile" id="navMobile">
+    <a class="nav-link" href="index.html">Home</a>
+    <a class="nav-link" href="projects.html">Projects</a>
+    <a class="nav-link" href="experience.html">Experience</a>
+    <a class="nav-link" href="tools.html">Tools</a>
+    <a class="nav-link" href="contact.html">Contact</a>
+    <a class="nav-cta" href="resume.html">Resume →</a>
+  </div>
 
-    <div class="hero">
-      <div class="hero-left">
-        <p class="eyebrow reveal">Enterprise Systems • Security • Data</p>
-        <h1 class="reveal">
-          I improve reliability, security, and operational efficiency across enterprise systems.
-        </h1>
-        <p class="hero-sub reveal">
-          Systems Analyst with hands-on experience in contact center platforms, vendor risk workflows,
-          and SQL-based reporting. I focus on fast incident resolution, clear documentation, and measurable outcomes.
-        </p>
+  <!-- ════════════════ HERO ════════════════ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
 
-        <div class="cta reveal">
-          <a class="btn primary" href="projects.html">Explore Projects</a>
-          <a class="btn" href="experience.html">View Experience</a>
-          <a class="btn" href="resume.html">View Resume</a>
-        </div>
-
-        <div class="quick-links reveal">
-          <a href="https://www.linkedin.com/in/brendonshaw/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <span class="dot">•</span>
-          <a href="https://github.com/BShaw0113" target="_blank" rel="noreferrer">GitHub</a>
-          <span class="dot">•</span>
-          <a href="contact.html">Contact</a>
-        </div>
-      </div>
-
-      <div class="hero-right reveal">
-        <div class="hero-card">
-          <h2>Focus Areas</h2>
-          <ul class="focus">
-            <li><span class="bullet"></span> Incident response & platform support</li>
-            <li><span class="bullet"></span> Vendor risk & security assessments</li>
-            <li><span class="bullet"></span> SQL reporting & operational analysis</li>
-            <li><span class="bullet"></span> Process improvement & documentation</li>
-          </ul>
-          <div class="mini-cta">
-            <a class="link-arrow" href="tools.html">View tools →</a>
+        <!-- Left: Text -->
+        <div>
+          <span class="badge badge-green reveal" style="margin-bottom:20px;">
+            <span class="status-dot"></span>Available for opportunities
+          </span>
+          <p class="hero-name reveal reveal-delay-1">Brendon Shaw</p>
+          <h1 class="hero-title reveal reveal-delay-2">Systems &amp;<br>Security Analyst</h1>
+          <p class="hero-sub reveal reveal-delay-3" style="margin-top:0;">
+            I build reliable enterprise infrastructure, assess vendor risk, and turn complex operational data into clear outcomes. Currently leading communications systems at UMRF Ventures.
+          </p>
+          <div class="hero-cta reveal reveal-delay-4">
+            <a class="btn btn-primary" href="projects.html">View My Work</a>
+            <a class="btn btn-secondary" href="SHAW-26.pdf" download>Download Resume</a>
+          </div>
+          <div class="hero-meta reveal reveal-delay-5">
+            <span>Memphis, TN</span>
+            <span class="dot">·</span>
+            <span>BS Computer Science, U of Memphis '26</span>
+            <span class="dot">·</span>
+            <span>AWS Certified</span>
           </div>
         </div>
+
+        <!-- Right: Profile card -->
+        <div class="hero-card reveal reveal-delay-3">
+          <div class="hero-card-header">
+            <div class="hero-card-header-label">Currently at</div>
+            <div class="hero-card-role">Comm Services Shift Lead</div>
+            <div class="hero-card-company">
+              <span class="status-dot" style="background:#6EE7B7;"></span>
+              UMRF Ventures · Aug 2025 – Present
+            </div>
+          </div>
+          <div class="hero-card-body">
+            <div class="hero-card-row">
+              <div class="hero-card-row-icon">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="hero-card-row-text">Memphis, Tennessee</div>
+                <div class="hero-card-row-sub">Open to remote &amp; hybrid</div>
+              </div>
+            </div>
+            <div class="hero-card-row">
+              <div class="hero-card-row-icon">
+                <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              </div>
+              <div>
+                <div class="hero-card-row-text">University of Memphis</div>
+                <div class="hero-card-row-sub">BS Computer Science · May 2026</div>
+              </div>
+            </div>
+            <div class="hero-card-row" style="border-bottom:none;padding-bottom:0;margin-bottom:16px;">
+              <div class="hero-card-row-icon">
+                <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              </div>
+              <div>
+                <div class="hero-card-row-text">Certifications</div>
+                <div class="hero-card-row-sub">AWS Cloud Practitioner · Google Data Analytics</div>
+              </div>
+            </div>
+            <div class="hero-card-certs">
+              <div class="hero-cert-chip">
+                <div class="hero-cert-chip-name">AWS</div>
+                <div class="hero-cert-chip-issuer">Cloud Practitioner</div>
+              </div>
+              <div class="hero-cert-chip">
+                <div class="hero-cert-chip-name">Google</div>
+                <div class="hero-cert-chip-issuer">Data Analytics</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-  </header>
+  </section>
 
-  <main class="container">
+  <!-- ════════════════ DARK STATS STRIP ════════════════ -->
+  <div class="stats-strip">
+    <div class="stats-strip-inner">
+      <div class="stats-strip-item reveal">
+        <div class="stats-strip-num">3</div>
+        <div class="stats-strip-label">Professional Roles</div>
+      </div>
+      <div class="stats-strip-item reveal reveal-delay-1">
+        <div class="stats-strip-num">$10M+</div>
+        <div class="stats-strip-label">Projected Impact</div>
+      </div>
+      <div class="stats-strip-item reveal reveal-delay-2">
+        <div class="stats-strip-num">2</div>
+        <div class="stats-strip-label">Industry Certifications</div>
+      </div>
+    </div>
+  </div>
 
-    <section class="stats reveal">
-      <div class="stat">
-        <div class="stat-num">Enterprise</div>
-        <div class="stat-label">Systems Support</div>
+  <!-- ════════════════ MARQUEE ════════════════ -->
+  <div class="marquee-section" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-inner">
+        <span class="marquee-item">Python</span><span class="marquee-sep"></span>
+        <span class="marquee-item">SQL</span><span class="marquee-sep"></span>
+        <span class="marquee-item">NICE On-Prem</span><span class="marquee-sep"></span>
+        <span class="marquee-item">Avaya Aura</span><span class="marquee-sep"></span>
+        <span class="marquee-item">ServiceNow</span><span class="marquee-sep"></span>
+        <span class="marquee-item">Verizon Contact Center</span><span class="marquee-sep"></span>
+        <span class="marquee-item">AWS</span><span class="marquee-sep"></span>
+        <span class="marquee-item">Vendor Risk</span><span class="marquee-sep"></span>
+        <span class="marquee-item">Git</span><span class="marquee-sep"></span>
+        <span class="marquee-item">MS SQL Server</span><span class="marquee-sep"></span>
+        <span class="marquee-item">Zoom Admin</span><span class="marquee-sep"></span>
+        <span class="marquee-item">NICE QM</span><span class="marquee-sep"></span>
+        <span class="marquee-item">WMS</span><span class="marquee-sep"></span>
+        <span class="marquee-item">Compliance</span><span class="marquee-sep"></span>
+        <span class="marquee-item">Ruby on Rails</span><span class="marquee-sep"></span>
+        <span class="marquee-item">PostgreSQL</span><span class="marquee-sep"></span>
       </div>
-      <div class="stat">
-        <div class="stat-num">SQL</div>
-        <div class="stat-label">Reporting & Analysis</div>
+      <!-- Duplicate for seamless loop -->
+      <div class="marquee-inner" aria-hidden="true">
+        <span class="marquee-item">Python</span><span class="marquee-sep"></span>
+        <span class="marquee-item">SQL</span><span class="marquee-sep"></span>
+        <span class="marquee-item">NICE On-Prem</span><span class="marquee-sep"></span>
+        <span class="marquee-item">Avaya Aura</span><span class="marquee-sep"></span>
+        <span class="marquee-item">ServiceNow</span><span class="marquee-sep"></span>
+        <span class="marquee-item">Verizon Contact Center</span><span class="marquee-sep"></span>
+        <span class="marquee-item">AWS</span><span class="marquee-sep"></span>
+        <span class="marquee-item">Vendor Risk</span><span class="marquee-sep"></span>
+        <span class="marquee-item">Git</span><span class="marquee-sep"></span>
+        <span class="marquee-item">MS SQL Server</span><span class="marquee-sep"></span>
+        <span class="marquee-item">Zoom Admin</span><span class="marquee-sep"></span>
+        <span class="marquee-item">NICE QM</span><span class="marquee-sep"></span>
+        <span class="marquee-item">WMS</span><span class="marquee-sep"></span>
+        <span class="marquee-item">Compliance</span><span class="marquee-sep"></span>
+        <span class="marquee-item">Ruby on Rails</span><span class="marquee-sep"></span>
+        <span class="marquee-item">PostgreSQL</span><span class="marquee-sep"></span>
       </div>
-      <div class="stat">
-        <div class="stat-num">Risk</div>
-        <div class="stat-label">Vendor Security Reviews</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">Ops</div>
-        <div class="stat-label">Workflow Optimization</div>
-      </div>
-    </section>
+    </div>
+  </div>
 
-    <!-- UPDATED FEATURED WORK -->
-    <section class="section">
-      <div class="section-head">
-        <h2 class="reveal">Featured Work</h2>
-        <p class="subtext reveal">
-          A quick look at projects and initiatives that highlight full-stack development, systems analysis, and measurable impact.
-        </p>
+  <!-- ════════════════ EXPERIENCE ════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header-row">
+        <div>
+          <p class="section-label reveal">Experience</p>
+          <h2 class="section-title reveal reveal-delay-1" style="margin-bottom:0;">Where I've worked</h2>
+        </div>
+        <a class="btn btn-secondary reveal" href="experience.html">Full Experience →</a>
       </div>
+      <div class="grid-3">
 
-      <div class="grid">
-        <article class="card reveal">
-          <h3>Tiger Syndicate — Full-Stack Rails Marketplace</h3>
-          <p>
-            Built a full-stack Ruby on Rails marketplace for the University of Memphis community with secure,
-            role-based functionality, real-world business rules, and strong focus on usability and data integrity.
-          </p>
-          <div class="meta">
-            <span class="pill">Ruby on Rails</span>
-            <span class="pill">PostgreSQL</span>
-            <span class="pill">Devise</span>
-            <span class="pill">OAuth</span>
-            <span class="pill">RSpec</span>
-            <span class="pill">Bootstrap</span>
+        <div class="card exp-card reveal">
+          <div class="exp-card-accent green"></div>
+          <div class="exp-card-num">01</div>
+          <div class="exp-card-content">
+            <div class="badge badge-green" style="margin-bottom:16px;"><span class="status-dot"></span>Current</div>
+            <h4>Comm Services Shift Lead</h4>
+            <p style="font-size:0.82rem;color:var(--text-muted);font-weight:500;margin:6px 0 14px;">UMRF Ventures · Aug 2025 – Present</p>
+            <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.65;">Directing enterprise communication infrastructure across NICE On-Prem, Avaya Aura, Verizon, and Zoom. Redesigned routing logic to measurably reduce resolution time.</p>
+            <div class="tag-list" style="margin-top:18px;">
+              <span class="tag">NICE On-Prem</span><span class="tag">Avaya Aura</span><span class="tag">ServiceNow</span>
+            </div>
           </div>
-          <div class="card-actions">
-            <a class="link-arrow" href="projects.html">View details →</a>
+        </div>
+
+        <div class="card exp-card reveal reveal-delay-1">
+          <div class="exp-card-accent indigo"></div>
+          <div class="exp-card-num">02</div>
+          <div class="exp-card-content">
+            <div class="badge badge-primary" style="margin-bottom:16px;">Security</div>
+            <h4>Vendor Risk Security Analyst</h4>
+            <p style="font-size:0.82rem;color:var(--text-muted);font-weight:500;margin:6px 0 14px;">UMRF Ventures · Apr – Jul 2025</p>
+            <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.65;">Conducted structured risk and compliance assessments of third-party vendors, surfacing critical vulnerabilities and strengthening governance to reduce audit prep time.</p>
+            <div class="tag-list" style="margin-top:18px;">
+              <span class="tag">Risk Assessment</span><span class="tag">Compliance</span><span class="tag">Vendor Audits</span>
+            </div>
           </div>
-        </article>
+        </div>
 
-        <article class="card reveal">
-          <h3>Tower Overhaul Project — DHL Supply Chain</h3>
-          <p>
-            Led an internship initiative to address critical inventory storage and management challenges.
-            Delivered a detailed analysis and executive presentation projecting potential cost savings exceeding <strong>$10M</strong>.
-          </p>
-          <div class="meta">
-            <span class="pill">Systems Analysis</span>
-            <span class="pill">Data Analysis</span>
-            <span class="pill">Inventory Management</span>
-            <span class="pill">Operational Reporting</span>
-            <span class="pill">Executive Presentation</span>
+        <div class="card exp-card reveal reveal-delay-2">
+          <div class="exp-card-accent gray"></div>
+          <div class="exp-card-num">03</div>
+          <div class="exp-card-content">
+            <div class="badge badge-muted" style="margin-bottom:16px;">Internship</div>
+            <h4>Systems Analyst Intern</h4>
+            <p style="font-size:0.82rem;color:var(--text-muted);font-weight:500;margin:6px 0 14px;">DHL Supply Chain · May – Aug 2024</p>
+            <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.65;">Queried large operational datasets with SQL to identify WMS bottlenecks and deliver data-driven planning insights to operations leadership.</p>
+            <div class="tag-list" style="margin-top:18px;">
+              <span class="tag">SQL</span><span class="tag">MS SQL Server</span><span class="tag">WMS Analysis</span>
+            </div>
           </div>
-          <div class="card-actions">
-            <a class="link-arrow" href="projects.html">View details →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ PROJECTS ════════════════ -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header-row">
+        <div>
+          <p class="section-label reveal">Projects</p>
+          <h2 class="section-title reveal reveal-delay-1" style="margin-bottom:0;">Things I've built</h2>
+        </div>
+        <a class="btn btn-secondary reveal" href="projects.html">All Projects →</a>
+      </div>
+      <div class="grid-2">
+
+        <div class="proj-card-v2 reveal">
+          <div class="proj-card-band proj-card-band-1">
+            <div class="proj-card-band-bg"></div>
+            <div style="position:relative;z-index:1;">
+              <p class="proj-card-type-label">Full-Stack · Web Application</p>
+              <h3 class="proj-card-title">Tiger Syndicate</h3>
+            </div>
           </div>
-        </article>
-
-        <article class="card reveal">
-          <h3>Operational SQL Reporting</h3>
-          <p>
-            Built SQL queries and reporting views using Microsoft SQL Server to analyze operational data,
-            identify trends, and support data-driven decision making.
-          </p>
-          <div class="meta">
-            <span class="pill">SQL</span>
-            <span class="pill">Microsoft SQL Server</span>
-            <span class="pill">Reporting</span>
-            <span class="pill">Data Analysis</span>
+          <div class="proj-card-body">
+            <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;margin-bottom:20px;">Role-based marketplace enabling University of Memphis students to securely buy, sell, and offer services — built with full auth, PostgreSQL, and end-to-end RSpec test coverage.</p>
+            <div class="tag-list">
+              <span class="tag">Ruby on Rails</span><span class="tag">PostgreSQL</span><span class="tag">Devise</span><span class="tag">OAuth</span><span class="tag">RSpec</span><span class="tag">Bootstrap</span>
+            </div>
           </div>
-          <div class="card-actions">
-            <a class="link-arrow" href="projects.html">View projects →</a>
+        </div>
+
+        <div class="proj-card-v2 reveal reveal-delay-1">
+          <div class="proj-card-band proj-card-band-2">
+            <div class="proj-card-band-bg"></div>
+            <div style="position:relative;z-index:1;">
+              <p class="proj-card-type-label">Systems Analysis · Enterprise</p>
+              <h3 class="proj-card-title">Tower Overhaul Project</h3>
+            </div>
           </div>
-        </article>
+          <div class="proj-card-body">
+            <div class="impact-chip" style="margin-bottom:16px;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              $10M+ projected savings
+            </div>
+            <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;margin-bottom:20px;">Cross-functional systems analysis initiative diagnosing critical inventory inefficiencies. Data-backed findings secured executive buy-in on a full process overhaul.</p>
+            <div class="tag-list">
+              <span class="tag">Systems Analysis</span><span class="tag">Data Analysis</span><span class="tag">Inventory Mgmt</span><span class="tag">Stakeholder Presentations</span>
+            </div>
+          </div>
+        </div>
+
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section">
-      <div class="section-head">
-        <h2 class="reveal">How I Work</h2>
-        <p class="subtext reveal">
-          I approach problems with clarity, structure, and outcomes—so fixes stick and teams move faster.
-        </p>
+  <!-- ════════════════ CTA ════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <h2>Let's build something great</h2>
+        <p>Open to Systems Analyst, Security Analyst, and Technical Operations roles. Available immediately.</p>
+        <a class="btn-white" href="contact.html">Get In Touch →</a>
       </div>
-
-      <div class="grid two">
-        <article class="card reveal">
-          <h3>1) Diagnose</h3>
-          <p>Confirm scope, reproduce the issue, review logs/metrics, and identify root cause.</p>
-        </article>
-
-        <article class="card reveal">
-          <h3>2) Improve</h3>
-          <p>Implement stable fixes and configuration updates with minimal disruption.</p>
-        </article>
-
-        <article class="card reveal">
-          <h3>3) Document</h3>
-          <p>Create clear notes, steps, and handoffs so teams can repeat the solution.</p>
-        </article>
-
-        <article class="card reveal">
-          <h3>4) Measure</h3>
-          <p>Track outcomes (repeat incidents, resolution speed, stability) and iterate.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="cta-band reveal">
-      <div>
-        <h2>Let’s connect</h2>
-        <p class="subtext">
-          If you’re hiring for Systems Analyst, Security Analyst, or Technical Operations roles, I’m open to conversations.
-        </p>
-      </div>
-      <div class="cta">
-        <a class="btn primary" href="contact.html">Contact</a>
-        <a class="btn" href="resume.html">Resume</a>
-        <a class="btn" href="https://www.linkedin.com/in/brendonshaw/" target="_blank" rel="noreferrer">LinkedIn</a>
-      </div>
-    </section>
-
-  </main>
+    </div>
+  </section>
 
   <footer class="footer">
-    <p>© <span id="year"></span> Brendon Shaw</p>
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">Brendon Shaw</div>
+        <div class="footer-tagline">Systems &amp; Security Analyst · Memphis, TN</div>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a class="footer-link" href="projects.html">Projects</a>
+        <a class="footer-link" href="experience.html">Experience</a>
+        <a class="footer-link" href="tools.html">Tools</a>
+        <a class="footer-link" href="contact.html">Contact</a>
+        <a class="footer-link" href="resume.html">Resume</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Brendon Shaw</span>
+      <div class="footer-socials">
+        <a class="footer-link" href="https://linkedin.com/in/brendonshaw/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="footer-link" href="https://github.com/BShaw0113" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
   </footer>
 
   <script src="script.js"></script>

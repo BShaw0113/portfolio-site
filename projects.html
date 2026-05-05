@@ -3,150 +3,220 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>Projects | Brendon Shaw</title>
-  <meta name="description" content="Projects by Brendon Shaw including Ruby on Rails full-stack work, systems analysis, and data-driven operational improvements." />
-
+  <meta name="description" content="Projects by Brendon Shaw — full-stack Ruby on Rails development and enterprise-scale systems analysis." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-  <header class="header">
-    <nav class="nav">
-      <a class="brand" href="index.html">Brendon Shaw</a>
 
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">Menu</button>
-
-      <div class="nav-links" id="navLinks">
-        <a class="nav-item" href="index.html">Home</a>
-        <a class="nav-item" href="projects.html">Projects</a>
-        <a class="nav-item" href="experience.html">Experience</a>
-        <a class="nav-item" href="tools.html">Tools</a>
-        <a class="nav-item" href="contact.html">Contact</a>
-        <a class="nav-item nav-cta" href="resume.html">Resume</a>
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">Brendon Shaw</a>
+      <div class="nav-links">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link active" href="projects.html">Projects</a>
+        <a class="nav-link" href="experience.html">Experience</a>
+        <a class="nav-link" href="tools.html">Tools</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+        <a class="nav-cta" href="resume.html">Resume →</a>
       </div>
-    </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav-mobile" id="navMobile">
+    <a class="nav-link" href="index.html">Home</a>
+    <a class="nav-link active" href="projects.html">Projects</a>
+    <a class="nav-link" href="experience.html">Experience</a>
+    <a class="nav-link" href="tools.html">Tools</a>
+    <a class="nav-link" href="contact.html">Contact</a>
+    <a class="nav-cta" href="resume.html">Resume →</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <header class="page-hero">
+    <div class="container">
+      <p class="page-eyebrow reveal">Portfolio</p>
+      <h1 class="reveal reveal-delay-1">Projects</h1>
+      <p class="reveal reveal-delay-2">A selection of work spanning full-stack development and enterprise systems analysis, each built to solve a real problem with a measurable result.</p>
+    </div>
   </header>
 
-  <main class="container">
-    <section class="section">
-      <h2>Featured Projects</h2>
-      <p class="subtext">
-        A selection of academic and professional projects demonstrating full-stack development,
-        systems analysis, and high-impact operational problem solving.
-      </p>
+  <!-- PROJECTS -->
+  <section class="section">
+    <div class="container">
 
-      <div class="grid">
-
-        <!-- TIGER SYNDICATE -->
-        <article class="card project-card">
-          <h3>Tiger Syndicate — Full-Stack Rails Marketplace</h3>
-
-          <p class="project-summary">
-            Full-stack Ruby on Rails marketplace built for the University of Memphis community,
-            enabling students to buy, sell, and offer services in a secure, role-based platform.
-          </p>
-
-          <div class="project-more">
-            <p>
-              Tiger Syndicate is a deployment-ready Rails application designed around real-world
-              business rules, data integrity, and usability. The platform supports authenticated
-              users, role-based permissions, and robust CRUD workflows.
+      <!-- Project 1 -->
+      <div class="card reveal" style="margin-bottom:28px;">
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start;">
+          <div class="proj-icon" style="margin-bottom:0;">
+            <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <div>
+            <p class="proj-type">Full-Stack · Web Application · Ruby on Rails</p>
+            <h2 style="font-size:1.6rem;margin-bottom:12px;">Tiger Syndicate</h2>
+            <p style="font-size:1rem;color:var(--text-muted);line-height:1.72;margin-bottom:24px;max-width:680px;">
+              Identified a gap in peer-to-peer commerce tools for the University of Memphis community and designed a full-stack marketplace enabling students to securely buy, sell, and offer services within a role-based environment.
             </p>
 
-            <p>
-              The project demonstrates end-to-end full-stack development, including database
-              design with PostgreSQL, authentication using Devise and OAuth, automated testing
-              with RSpec, and responsive UI design using Bootstrap.
-            </p>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px;" class="proj-highlights">
+              <div style="padding:16px;background:var(--bg-accent);border-radius:var(--radius-md);">
+                <p style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--primary);margin-bottom:4px;">Architecture</p>
+                <p style="font-size:0.9rem;font-weight:600;color:var(--text);">MVC · Full-Stack</p>
+              </div>
+              <div style="padding:16px;background:var(--bg-accent);border-radius:var(--radius-md);">
+                <p style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--primary);margin-bottom:4px;">Database</p>
+                <p style="font-size:0.9rem;font-weight:600;color:var(--text);">PostgreSQL</p>
+              </div>
+              <div style="padding:16px;background:var(--bg-accent);border-radius:var(--radius-md);">
+                <p style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--primary);margin-bottom:4px;">Testing</p>
+                <p style="font-size:0.9rem;font-weight:600;color:var(--text);">RSpec · End-to-End</p>
+              </div>
+            </div>
+
+            <div style="margin-bottom:24px;">
+              <p style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-subtle);margin-bottom:14px;">Key Contributions</p>
+              <ul style="display:flex;flex-direction:column;gap:10px;">
+                <li style="display:flex;gap:12px;font-size:0.9rem;color:var(--text-muted);line-height:1.65;">
+                  <span style="width:6px;height:6px;border-radius:50%;background:var(--primary);flex-shrink:0;margin-top:9px;"></span>
+                  Designed and built a full-stack Ruby on Rails marketplace from scratch — from requirements gathering through production-ready deployment.
+                </li>
+                <li style="display:flex;gap:12px;font-size:0.9rem;color:var(--text-muted);line-height:1.65;">
+                  <span style="width:6px;height:6px;border-radius:50%;background:var(--primary);flex-shrink:0;margin-top:9px;"></span>
+                  Implemented authentication and authorization using Devise and OAuth, enforcing role-based access controls and real-world business rules.
+                </li>
+                <li style="display:flex;gap:12px;font-size:0.9rem;color:var(--text-muted);line-height:1.65;">
+                  <span style="width:6px;height:6px;border-radius:50%;background:var(--primary);flex-shrink:0;margin-top:9px;"></span>
+                  Built and validated end-to-end features using RSpec, crafted responsive UI components with Bootstrap, and maintained a reliable PostgreSQL backend.
+                </li>
+              </ul>
+            </div>
+
+            <div class="tag-list">
+              <span class="tag">Ruby on Rails</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">RSpec</span>
+              <span class="tag">Devise</span>
+              <span class="tag">OAuth</span>
+              <span class="tag">Bootstrap</span>
+              <span class="tag">MVC Architecture</span>
+              <span class="tag">Full-Stack Development</span>
+            </div>
           </div>
-
-          <div class="meta">
-            <span class="pill">Ruby on Rails</span>
-            <span class="pill">PostgreSQL</span>
-            <span class="pill">RSpec</span>
-            <span class="pill">Devise</span>
-            <span class="pill">OAuth</span>
-            <span class="pill">Bootstrap</span>
-          </div>
-
-          <div class="card-actions">
-            <button class="link-arrow toggle-project">More →</button>
-            <span class="dot">•</span>
-            <a class="link-arrow" href="#" target="_blank" rel="noreferrer">GitHub →</a>
-          </div>
-        </article>
-
-        <!-- TOWER OVERHAUL PROJECT -->
-        <article class="card project-card">
-          <h3>Tower Overhaul Project — DHL Supply Chain</h3>
-
-          <p class="project-summary">
-            Led an analytical initiative during my Systems Analyst internship to address
-            critical inventory storage and tower management challenges.
-          </p>
-
-          <div class="project-more">
-            <p>
-              During my internship at DHL Supply Chain, I identified inefficiencies in inventory
-              storage and tower utilization that were contributing to operational bottlenecks
-              and increased costs.
-            </p>
-
-            <p>
-              I conducted a comprehensive analysis of inventory workflows, system usage,
-              and data accuracy, producing a detailed report outlining root causes,
-              operational risks, and financial impact.
-            </p>
-
-            <p>
-              Findings and proposed solutions were presented to senior management, with
-              projected cost savings exceeding <strong>$10 million</strong> through improved
-              inventory organization, system usage, and process optimization.
-            </p>
-          </div>
-
-          <div class="meta">
-            <span class="pill">Systems Analysis</span>
-            <span class="pill">Data Analysis</span>
-            <span class="pill">Inventory Management</span>
-            <span class="pill">Operational Reporting</span>
-            <span class="pill">Stakeholder Presentation</span>
-          </div>
-
-          <div class="card-actions">
-            <button class="link-arrow toggle-project">More →</button>
-          </div>
-        </article>
-
-        <!-- SQL REPORTING -->
-        <article class="card">
-          <h3>Operational SQL Reporting</h3>
-          <p>
-            Built SQL queries and reporting views using Microsoft SQL Server to analyze
-            operational data and support data-driven decision making.
-          </p>
-
-          <div class="meta">
-            <span class="pill">SQL</span>
-            <span class="pill">Microsoft SQL Server</span>
-            <span class="pill">Data Analysis</span>
-            <span class="pill">Reporting</span>
-          </div>
-
-          <div class="card-actions">
-            <a class="link-arrow" href="experience.html">Related experience →</a>
-          </div>
-        </article>
-
+        </div>
       </div>
-    </section>
-  </main>
+
+      <!-- Project 2 -->
+      <div class="card reveal">
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start;">
+          <div class="proj-icon" style="margin-bottom:0;">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <div>
+            <p class="proj-type">Systems Analysis · Enterprise · Operations</p>
+            <div class="impact-chip" style="margin-top:4px;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              $10M+ projected cost savings
+            </div>
+            <h2 style="font-size:1.6rem;margin-bottom:12px;margin-top:8px;">Tower Overhaul Project</h2>
+            <p style="font-size:1rem;color:var(--text-muted);line-height:1.72;margin-bottom:24px;max-width:680px;">
+              Faced with critical inefficiencies in inventory storage and tower management that were degrading operational performance, spearheaded a cross-functional systems analysis initiative to diagnose root causes and develop a data-backed remediation strategy.
+            </p>
+
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px;" class="proj-highlights">
+              <div style="padding:16px;background:var(--bg-accent);border-radius:var(--radius-md);">
+                <p style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--primary);margin-bottom:4px;">Scope</p>
+                <p style="font-size:0.9rem;font-weight:600;color:var(--text);">Cross-Functional</p>
+              </div>
+              <div style="padding:16px;background:var(--green-light);border-radius:var(--radius-md);">
+                <p style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#047857;margin-bottom:4px;">Financial Impact</p>
+                <p style="font-size:0.9rem;font-weight:600;color:var(--text);">$10M+ Savings</p>
+              </div>
+              <div style="padding:16px;background:var(--bg-accent);border-radius:var(--radius-md);">
+                <p style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--primary);margin-bottom:4px;">Outcome</p>
+                <p style="font-size:0.9rem;font-weight:600;color:var(--text);">Exec Buy-In Secured</p>
+              </div>
+            </div>
+
+            <div style="margin-bottom:24px;">
+              <p style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-subtle);margin-bottom:14px;">Key Contributions</p>
+              <ul style="display:flex;flex-direction:column;gap:10px;">
+                <li style="display:flex;gap:12px;font-size:0.9rem;color:var(--text-muted);line-height:1.65;">
+                  <span style="width:6px;height:6px;border-radius:50%;background:var(--primary);flex-shrink:0;margin-top:9px;"></span>
+                  Executed comprehensive data and workflow analysis across affected systems, producing a detailed report that mapped root causes, quantified operational risks, and outlined the full financial impact of existing inefficiencies.
+                </li>
+                <li style="display:flex;gap:12px;font-size:0.9rem;color:var(--text-muted);line-height:1.65;">
+                  <span style="width:6px;height:6px;border-radius:50%;background:var(--primary);flex-shrink:0;margin-top:9px;"></span>
+                  Delivered findings and data-backed recommendations directly to senior leadership, securing executive buy-in on a full process overhaul.
+                </li>
+                <li style="display:flex;gap:12px;font-size:0.9rem;color:var(--text-muted);line-height:1.65;">
+                  <span style="width:6px;height:6px;border-radius:50%;background:var(--primary);flex-shrink:0;margin-top:9px;"></span>
+                  Projected cost savings exceeding $10 million through targeted inventory restructuring and process optimization.
+                </li>
+              </ul>
+            </div>
+
+            <div class="tag-list">
+              <span class="tag">Systems Analysis</span>
+              <span class="tag">Data Analysis</span>
+              <span class="tag">Inventory Management</span>
+              <span class="tag">Operational Reporting</span>
+              <span class="tag">Stakeholder Presentations</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <h2>Want to see more?</h2>
+        <p>Check out my full resume or get in touch to talk through my work in more detail.</p>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+          <a class="btn-white" href="resume.html">View Resume →</a>
+          <a href="contact.html" style="display:inline-flex;align-items:center;gap:8px;font-size:1rem;font-weight:600;color:rgba(255,255,255,0.8);padding:14px 20px;border-radius:var(--radius-full);border:1.5px solid rgba(255,255,255,0.3);transition:all 220ms ease;" onmouseover="this.style.color='#fff';this.style.borderColor='rgba(255,255,255,0.7)';" onmouseout="this.style.color='rgba(255,255,255,0.8)';this.style.borderColor='rgba(255,255,255,0.3)';">Contact Me</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <footer class="footer">
-    <p>© <span id="year"></span> Brendon Shaw</p>
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">Brendon Shaw</div>
+        <div class="footer-tagline">Systems &amp; Security Analyst · Memphis, TN</div>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a class="footer-link" href="projects.html">Projects</a>
+        <a class="footer-link" href="experience.html">Experience</a>
+        <a class="footer-link" href="tools.html">Tools</a>
+        <a class="footer-link" href="contact.html">Contact</a>
+        <a class="footer-link" href="resume.html">Resume</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Brendon Shaw</span>
+      <div class="footer-socials">
+        <a class="footer-link" href="https://linkedin.com/in/brendonshaw/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="footer-link" href="https://github.com/BShaw0113" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
   </footer>
 
   <script src="script.js"></script>
+  <style>
+    @media (max-width: 640px) {
+      .proj-highlights { grid-template-columns: 1fr !important; }
+      .card > div[style*="grid-template-columns:auto"] { grid-template-columns: 1fr !important; }
+    }
+  </style>
 </body>
 </html>
